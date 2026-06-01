@@ -99,7 +99,12 @@ section,
   color: #5fb3b0;
   display: inline-block;
 }
-
+.eyebrow-logo {
+  height: 35px;
+  width: auto;
+  display: block;
+  margin-bottom: 0.8rem;
+}
 .hero-tags {
   display: flex;
   flex-wrap: wrap;

@@ -82,10 +82,9 @@ function App() {
 
   const absSamplePost = {
     eyebrow: 'Sample Post',
-    title: '4 Types of Graphic Design by ABS',
+    title: 'Graphic Designs | ABS',
     intro: 'A sample post style for ABS that presents the four core content formats in one clean, professional overview.',
     body: 'This post brings carousel posts, static posts, infographics, and story graphics together in a single polished layout so the full ABS design system can be viewed at once.',
-    callout: 'Use this as the main ABS reference post for training, branding, or portfolio presentation.',
     types: [
       {
         title: 'Carousel Post',
@@ -129,7 +128,6 @@ function App() {
     <div className="portfolio">
       <header className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Portfolio</p>
           <h1>Kent Paul Vergara</h1>
           <h2>Strategic Social Media Manager | Virtual Assistant | Content Creator</h2>
           <p className="hero-summary">
@@ -372,18 +370,125 @@ function App() {
         </div>
       )}
 
-      <section className="grid two-col">
-        <div className="card">
-          <h3>Skills & Tools</h3>
-          <ul className="clean-list">
-            <li>Canva / Adobe Express</li>
-            <li>Meta Business Suite</li>
-            <li>Content writing and editing</li>
-            <li>Scheduling and workflow organization</li>
-            <li>Basic analytics and reporting</li>
-          </ul>
-        </div>
-      </section>
+<section>
+  <div className="section-heading">
+    <p className="eyebrow">Creative Gallery</p>
+    <h3>Photo & Video Edits</h3>
+  </div>
+
+  <div className="card">
+    <p style={{color: '#4f6470', marginBottom: '1.5rem'}}>
+      A collection of my creative work including photo manipulations, color grading, 
+      and video editing projects.
+    </p>
+
+    {/* Photo Edits - 3 photos */}
+    <h4 style={{marginBottom: '1rem', color: '#2f5f68'}}>Photo Edits</h4>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gap: '1.5rem',
+      marginBottom: '2rem'
+    }}>
+      {/* Photo 1 */}
+      <div 
+        onClick={() => setSelectedImage({src: '/your-photo-1.jpg', title: 'Photo Edit 1'})} 
+        style={{cursor: 'pointer'}}
+      >
+        <img 
+          src="/your-photo-1.jpg" 
+          alt="Photo edit 1" 
+          style={{width: '100%', borderRadius: '12px', border: '1px solid #dce5e7'}} 
+        />
+        <p style={{marginTop: '0.5rem', fontSize: '0.85rem', textAlign: 'center', color: '#4f6470'}}>
+        </p>
+      </div>
+
+      {/* Photo 2 */}
+      <div 
+        onClick={() => setSelectedImage({src: '/your-photo-2.jpg', title: 'Photo Edit 2'})} 
+        style={{cursor: 'pointer'}}
+      >
+        <img 
+          src="/your-photo-2.jpg" 
+          alt="Photo edit 2" 
+          style={{width: '100%', borderRadius: '12px', border: '1px solid #dce5e7'}} 
+        />
+        <p style={{marginTop: '0.5rem', fontSize: '0.85rem', textAlign: 'center', color: '#4f6470'}}>
+        </p>
+      </div>
+
+      {/* Photo 3 */}
+      <div 
+        onClick={() => setSelectedImage({src: '/your-photo-3.jpg', title: 'Photo Edit 3'})} 
+        style={{cursor: 'pointer'}}
+      >
+        <img 
+          src="/your-photo-3.jpg" 
+          alt="Photo edit 3" 
+          style={{width: '100%', borderRadius: '12px', border: '1px solid #dce5e7'}} 
+        />
+        <p style={{marginTop: '0.5rem', fontSize: '0.85rem', textAlign: 'center', color: '#4f6470'}}>
+        </p>
+      </div>
+    </div>
+
+    {/* Video Edits - 2 videos */}
+    <h4 style={{marginBottom: '1rem', color: '#2f5f68'}}>Video Edits</h4>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+      gap: '1.5rem'
+    }}>
+      {/* Video 1 */}
+      <div>
+        <video 
+          controls 
+          style={{width: '100%', borderRadius: '12px', border: '1px solid #dce5e7'}}
+          preload="metadata"
+        >
+          <source src="/your-video-1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p style={{marginTop: '0.5rem', fontSize: '0.85rem', textAlign: 'center', color: '#4f6470'}}>
+          
+        </p>
+      </div>
+
+      {/* Video 2 */}
+      <div>
+        <video 
+          controls 
+          style={{width: '100%', borderRadius: '12px', border: '1px solid #dce5e7'}}
+          preload="metadata"
+        >
+          <source src="/your-video-2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p style={{marginTop: '0.5rem', fontSize: '0.85rem', textAlign: 'center', color: '#4f6470'}}>
+  
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Skills & Tools section */}
+<section className="grid two-col">
+  <div className="card">
+    <h3>Skills & Tools</h3>
+    <ul className="clean-list">
+      <li>Canva / Adobe Express</li>
+      <li>Meta Business Suite</li>
+      <li>Content writing and editing</li>
+      <li>Scheduling and workflow organization</li>
+      <li>Basic analytics and reporting</li>
+      <li>Adobe Photoshop / Lightroom</li>
+      <li>Video Editing (CapCut / Da Vincci Resolve)</li>
+      <li>Color Grading & Retouching</li>
+    </ul>
+  </div>
+</section>
 
       <section>
         <div className="section-heading">
