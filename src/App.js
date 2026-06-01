@@ -230,7 +230,7 @@ function App() {
           </ul>
 
           <div style={{marginTop: '1rem'}}>
-            <p style={{fontSize: '0.9rem', color: '#7a8a94', marginBottom: '0.5rem'}}><strong>Proofs:</strong></p>
+            <p style={{fontSize: '0.9rem', color: '#7a8a94', marginBottom: '0.5rem'}}><strong>Training Snippets/Shots:</strong></p>
             <div style={{display: 'flex', gap: '0.75rem', flexWrap: 'wrap'}}>
               {trainingHighlight.proofs.map((proof, i) => (
                 <figure key={i} style={{margin: 0, width: '220px'}}>
