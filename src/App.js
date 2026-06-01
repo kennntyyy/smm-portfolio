@@ -393,7 +393,7 @@ function App() {
         <div className="contact-info card">
           <div style={{marginBottom: '1.5rem'}}>
             <h4 style={{marginBottom: '0.5rem', color: '#2f5f68'}}>Email</h4>
-            <p style={{color: '#5fb3b0', fontSize: '1.05rem', fontWeight: '500'}}>kp.vergz@gmail.com</p>
+            <p style={{color: '#5fb3b0', fontSize: '1.05rem', fontWeight: '500'}}>kentpaul.vergara@abs-co.org</p>
           </div>
           <div>
             <h4 style={{marginBottom: '0.5rem', color: '#2f5f68'}}>Available For</h4>
