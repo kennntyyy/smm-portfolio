@@ -30,6 +30,101 @@ function App() {
       meta: 'Facebook | Recruitment Post'
     }
   ];
+  
+  const trainingHighlight = {
+    provider: 'Ascension Business Solutions, LLC (ABS)',
+    title: 'Social Media Management Training',
+    bullets: [
+      'Content planning and scheduling',
+      'Client communication and professionalism',
+      'Analytics tracking and reporting',
+      'HIPAA compliance and data privacy awareness'
+    ],
+    snippet: "Completed focused ABS training covering content planning, client communications, analytics, and compliance standards for healthcare-related social media workflows.",
+    proofs: [
+      {
+        src: '/ABS Training Attendance Proof 1.png',
+        title: 'Content Planning and Scheduling Training',
+        description: 'Content planning and scheduling training attendance screenshot with ABS participants in session.'
+      },
+      {
+        src: '/ABS Training Attendance Proof 2 - Communication Skills Training.png',
+        title: 'Communication Skills Training with Sir John',
+        description: 'Communication skills training with Sir John, Kent, and Ryan shown in the attendance view.'
+      },
+      {
+        src: '/ABS Training Attendance Proof 3.png',
+        title: 'Analytics Tracking and Reporting Training',
+        description: 'Analytics tracking and reporting training attendance screenshot with active ABS trainees.'
+      },
+      {
+        src: '/ABS Training Attendance Proof 4.png',
+        title: 'Data Privacy and HIPAA Compliance Training',
+        description: 'Data privacy and HIPAA compliance training attendance screenshot with active participants in the Zoom session.'
+      },
+      {
+        src: '/ABS Shadow training Social Media Management.png',
+        title: 'Social Media Management Shadow Training',
+        description: 'Shadow training screenshot focused on real social media management workflow and task execution.'
+      },
+      {
+        src: '/ABS Training SMM Role.png',
+        title: 'SMM Role Training Overview',
+        description: 'Training screenshot presenting Social Media Manager role responsibilities and execution standards.'
+      },
+      {
+        src: '/HIPPA ASSESSMENT CERTIFICATE.png',
+        title: 'HIPPA Assessment Certificate',
+        description: 'Certificate of Completion from Ascension confirming HIPAA compliance and cyber security training completion.'
+      }
+    ]
+  };
+
+  const absSamplePost = {
+    eyebrow: 'Sample Post',
+    title: '4 Types of Graphic Design by ABS',
+    intro: 'A sample post style for ABS that presents the four core content formats in one clean, professional overview.',
+    body: 'This post brings carousel posts, static posts, infographics, and story graphics together in a single polished layout so the full ABS design system can be viewed at once.',
+    callout: 'Use this as the main ABS reference post for training, branding, or portfolio presentation.',
+    types: [
+      {
+        title: 'Carousel Post',
+        description: 'Multi-slide posts that guide followers through a story, tutorial, or list. Great for tips, step-by-steps, and product showcases.',
+        bestFor: 'Education & Storytelling',
+        slides: [
+          { src: '/Ascension Business Solutions Deck.png', title: 'Slide 1: Signs You Need a Virtual Assistant' },
+          { src: '/Ascension Business Solutions Deck (1).png', title: 'Slide 2: Youre Always Behind on Admin Tasks' },
+          { src: '/Ascension Business Solutions Deck (2).png', title: 'Slide 3: You Never Take a Real Day Off' },
+          { src: '/Ascension Business Solutions Deck (3).png', title: 'Slide 4: You Dont Know Whats Working' },
+          { src: '/Ascension Business Solutions Deck (4).png', title: 'Slide 5: Lets Change That' }
+        ]
+      },
+      {
+        title: 'Story Graphics',
+        description: 'Vertical 9:16 format built for Instagram, Facebook & TikTok Stories. Short, punchy, and highly immersive.',
+        bestFor: 'Reach & Visibility',
+        slides: [
+          { src: '/ABS Story Series.png', title: 'Story Graphics Slide 1' },
+          { src: '/ABS Story Series (1).png', title: 'Story Graphics Slide 2' },
+          { src: '/ABS Story Series (2).png', title: 'Story Graphics Slide 3' },
+          { src: '/ABS Story Series (3).png', title: 'Story Graphics Slide 4' },
+          { src: '/ABS Story Series (4).png', title: 'Story Graphics Slide 5' }
+        ]
+      },
+      {
+        title: 'Static Post',
+        image: '/ABS Static Post.png',
+        description: 'Single-image posts — the foundation of any feed. Bold visuals, quotes, announcements, and product shots live here.',
+        bestFor: 'Quick Impact & Brand'
+      },
+      {
+        title: 'Infographics',
+        image: '/ABS Infographics.png',
+        description: 'Data-driven visual content that simplifies complex info into digestible visuals. High shareability and authority.',
+        bestFor: 'Data & Research'
+      }
+    ]
+  };
   return (
     <div className="portfolio">
       <header className="hero">
@@ -51,7 +146,7 @@ function App() {
         </div>
 
         <div className="profile-placeholder card">
-          <img src="/20250919_144901_005.jpg" alt="Kent Paul Vergara - Professional headshot" className="profile-image" />
+          <img src="/Kent Paul V. ABS Profile.png" alt="Kent Paul Vergara - Professional headshot" className="profile-image" />
         </div>
       </header>
 
@@ -123,16 +218,90 @@ function App() {
       <section>
         <div className="section-heading">
           <p className="eyebrow">Training Highlight</p>
-          <h3>Ascension Business Solutions, LLC (ABS)</h3>
+          <h3>{trainingHighlight.provider}</h3>
         </div>
         <div className="card highlight">
-          <p><strong>Social Media Management Training</strong></p>
+          <p><strong>{trainingHighlight.title}</strong></p>
+          <p style={{marginTop: '0.5rem', color: '#4f6470'}}>{trainingHighlight.snippet}</p>
           <ul className="clean-list">
-            <li>Content planning and scheduling</li>
-            <li>Client communication and professionalism</li>
-            <li>Analytics tracking and reporting</li>
-            <li>HIPAA compliance and data privacy awareness</li>
+            {trainingHighlight.bullets.map((b, i) => (
+              <li key={i}>{b}</li>
+            ))}
           </ul>
+
+          <div style={{marginTop: '1rem'}}>
+            <p style={{fontSize: '0.9rem', color: '#7a8a94', marginBottom: '0.5rem'}}><strong>Proofs:</strong></p>
+            <div style={{display: 'flex', gap: '0.75rem', flexWrap: 'wrap'}}>
+              {trainingHighlight.proofs.map((proof, i) => (
+                <figure key={i} style={{margin: 0, width: '220px'}}>
+                  <img
+                    src={proof.src}
+                    alt={proof.title}
+                    style={{width: '100%', height: 'auto', borderRadius: '8px', cursor: 'pointer', border: '1px solid #e6eef0'}}
+                    onClick={() => setSelectedImage(proof)}
+                  />
+                  <figcaption style={{fontSize: '0.82rem', color: '#4f6470', lineHeight: '1.35', marginTop: '0.4rem'}}>
+                    {proof.description}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="section-heading">
+          <p className="eyebrow">{absSamplePost.eyebrow}</p>
+          <h3>{absSamplePost.title}</h3>
+        </div>
+
+        <div className="card highlight">
+          <p style={{color: '#4f6470'}}>{absSamplePost.intro}</p>
+          <div style={{backgroundColor: '#f3faf9', padding: '1.25rem', borderRadius: '14px', borderLeft: '4px solid #5fb3b0', marginTop: '1rem'}}>
+            <p style={{margin: 0, color: '#4f6470'}}>{absSamplePost.body}</p>
+          </div>
+          <p style={{marginTop: '1rem', color: '#5fb3b0', fontWeight: 500}}>{absSamplePost.callout}</p>
+
+          <div className="work-grid" style={{marginTop: '1.5rem', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))'}}>
+            {absSamplePost.types.map((type, index) => (
+              <article
+                key={index}
+                className="card work-card"
+                style={{cursor: 'default'}}
+              >
+                <h4>{type.title}</h4>
+                <p>{type.description}</p>
+                {type.slides ? (
+                  <div style={{display: 'grid', gridTemplateColumns: '1fr', gap: '0.75rem', marginTop: '0.75rem', width: '100%'}}>
+                    {type.slides.map((slide, slideIndex) => (
+                      <div
+                        key={slideIndex}
+                        style={{border: '1px solid #d8e8e8', borderRadius: '12px', overflow: 'hidden', background: '#fff', cursor: 'pointer'}}
+                        onClick={() => setSelectedImage({src: slide.src, title: slide.title})}
+                      >
+                        <img src={slide.src} alt={slide.title} className="work-image" style={{margin: 0, borderRadius: 0}} />
+                        <div style={{padding: '0.8rem 0.9rem'}}>
+                          <p style={{margin: 0, color: '#2f5f68', fontWeight: 600}}>{slide.title}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <>
+                    <img
+                      src={type.image}
+                      alt={type.title}
+                      className="work-image"
+                      style={{cursor: 'pointer'}}
+                      onClick={() => setSelectedImage({src: type.image, title: type.title})}
+                    />
+                  </>
+                )}
+                <p className="work-meta"><strong>Best for:</strong> {type.bestFor}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
