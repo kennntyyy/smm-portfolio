@@ -469,6 +469,20 @@ function App() {
   
         </p>
       </div>
+      {/* Video 3 */}
+      <div>
+        <video 
+          controls 
+          style={{width: '100%', borderRadius: '12px', border: '1px solid #dce5e7'}}
+          preload="metadata"
+        >
+          <source src="/your-video-3.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p style={{marginTop: '0.5rem', fontSize: '0.85rem', textAlign: 'center', color: '#4f6470'}}>
+  
+        </p>
+      </div>
     </div>
   </div>
 </section>
